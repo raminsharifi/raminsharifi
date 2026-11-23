@@ -1,0 +1,231 @@
+<svg width="1200" height="280" viewBox="0 0 1200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Deep Midnight Aurora Backdrop -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1200" y2="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0B0F19"/>
+      <stop offset="50%" stop-color="#131932"/>
+      <stop offset="100%" stop-color="#1A1336"/>
+    </linearGradient>
+
+    <!-- Aurora Glow Orbs -->
+    <radialGradient id="orbCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.34"/>
+      <stop offset="60%" stop-color="#38BDF8" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbViolet" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#A78BFA" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#8B5CF6" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbEmerald" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.24"/>
+      <stop offset="65%" stop-color="#10B981" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Title Gradient -->
+    <linearGradient id="nameGrad" x1="64" y1="92" x2="540" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="55%" stop-color="#BAE6FD"/>
+      <stop offset="100%" stop-color="#C4B5FD"/>
+    </linearGradient>
+
+    <!-- Accent Bar & Border Gradients -->
+    <linearGradient id="accentBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="50%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0" y1="0" x2="1200" y2="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#8B5CF6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#34D399" stop-opacity="0.45"/>
+    </linearGradient>
+
+    <!-- Subtle Dot Grid Pattern -->
+    <pattern id="dotGrid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#94A3B8" fill-opacity="0.14"/>
+    </pattern>
+
+    <!-- Soft Glow Filter -->
+    <filter id="nodeGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Clip Path for Rounded Card -->
+    <clipPath id="cardClip">
+      <rect x="1" y="1" width="1198" height="278" rx="18"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .title {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 52px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+    .subtitle {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 19px;
+      font-weight: 500;
+      fill: #CBD5E1;
+      letter-spacing: 0.2px;
+    }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+    }
+    .chip-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 12.5px;
+      font-weight: 600;
+      fill: #E2E8F0;
+    }
+    .node-label {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 10.5px;
+      font-weight: 600;
+      fill: #94A3B8;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-7px); }
+    }
+    @keyframes floatAlt {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(6px); }
+    }
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -36; }
+    }
+    @keyframes shimmerOrb {
+      0%, 100% { opacity: 0.85; }
+      50% { opacity: 1; }
+    }
+    .pulse { animation: pulseDot 2.2s ease-in-out infinite; }
+    .float1 { animation: floatSlow 5.5s ease-in-out infinite; }
+    .float2 { animation: floatAlt 6.4s ease-in-out infinite; }
+    .flow { stroke-dasharray: 5 7; animation: dashFlow 3.2s linear infinite; }
+    .flow-slow { stroke-dasharray: 4 8; animation: dashFlow 4.5s linear infinite; }
+    .orb { animation: shimmerOrb 6s ease-in-out infinite; }
+  </style>
+
+  <g clip-path="url(#cardClip)">
+    <!-- Background -->
+    <rect x="0" y="0" width="1200" height="280" fill="url(#bgGrad)"/>
+    <rect x="0" y="0" width="1200" height="280" fill="url(#dotGrid)"/>
+
+    <!-- Aurora Orbs -->
+    <circle class="orb" cx="190" cy="40" r="240" fill="url(#orbCyan)"/>
+    <circle class="orb" cx="980" cy="140" r="270" fill="url(#orbViolet)"/>
+    <circle class="orb" cx="690" cy="260" r="210" fill="url(#orbEmerald)"/>
+
+    <!-- Top Gradient Accent Strip -->
+    <rect x="0" y="0" width="1200" height="3.5" fill="url(#accentBar)"/>
+
+    <!-- Decorative Bottom Subtle Wave -->
+    <path d="M0 248 Q 300 226 600 248 T 1200 242 L 1200 280 L 0 280 Z" fill="#090D16" fill-opacity="0.45"/>
+
+    <!-- LEFT CONTENT: Identity & Credentials -->
+    <!-- Status Pill -->
+    <rect x="64" y="38" width="292" height="28" rx="14" fill="#1E293B" fill-opacity="0.82" stroke="#38BDF8" stroke-opacity="0.35" stroke-width="1"/>
+    <circle class="pulse" cx="82" cy="52" r="4.5" fill="#34D399"/>
+    <text x="95" y="56" class="mono" fill="#7DD3FC">TORONTO, CANADA · AI &amp; SYSTEMS</text>
+
+    <!-- Main Name -->
+    <text x="64" y="132" class="title" fill="url(#nameGrad)">Ramin Sharifi</text>
+
+    <!-- Role Subtitle -->
+    <text x="64" y="168" class="subtitle">Senior Software Engineer &amp; Team Lead  ·  AI Evaluation &amp; Agentic Systems</text>
+
+    <!-- Highlight Chips -->
+    <g transform="translate(64, 194)">
+      <!-- Chip 1 -->
+      <rect x="0" y="0" width="174" height="32" rx="8" fill="#17203A" stroke="#38BDF8" stroke-opacity="0.38" stroke-width="1"/>
+      <circle cx="16" cy="16" r="3.5" fill="#38BDF8"/>
+      <text x="28" y="20.5" class="chip-text">Team Lead @ Turing</text>
+
+      <!-- Chip 2 -->
+      <rect x="186" y="0" width="124" height="32" rx="8" fill="#17203A" stroke="#A78BFA" stroke-opacity="0.38" stroke-width="1"/>
+      <circle cx="202" cy="16" r="3.5" fill="#A78BFA"/>
+      <text x="214" y="20.5" class="chip-text">MASc · UVic</text>
+
+      <!-- Chip 3 -->
+      <rect x="322" y="0" width="166" height="32" rx="8" fill="#17203A" stroke="#34D399" stroke-opacity="0.38" stroke-width="1"/>
+      <circle cx="338" cy="16" r="3.5" fill="#34D399"/>
+      <text x="350" y="20.5" class="chip-text">4 IEEE Publications</text>
+
+      <!-- Chip 4 -->
+      <rect x="500" y="0" width="114" height="32" rx="8" fill="#17203A" stroke="#F59E0B" stroke-opacity="0.4" stroke-width="1"/>
+      <circle cx="516" cy="16" r="3.5" fill="#F59E0B"/>
+      <text x="528" y="20.5" class="chip-text">7+ Yrs Exp</text>
+    </g>
+
+    <!-- RIGHT VISUAL: Multi-Agent Orchestration Constellation -->
+    <g transform="translate(765, 22)">
+      <!-- Subtle Orbital Rings -->
+      <circle cx="205" cy="118" r="96" stroke="#38BDF8" stroke-opacity="0.12" stroke-width="1" stroke-dasharray="4 6"/>
+      <circle cx="205" cy="118" r="62" stroke="#A78BFA" stroke-opacity="0.16" stroke-width="1"/>
+
+      <!-- Animated Signal Links -->
+      <line x1="205" y1="118" x2="96" y2="56" stroke="#38BDF8" stroke-opacity="0.55" stroke-width="1.6" class="flow"/>
+      <line x1="205" y1="118" x2="322" y2="52" stroke="#A78BFA" stroke-opacity="0.55" stroke-width="1.6" class="flow-slow"/>
+      <line x1="205" y1="118" x2="108" y2="188" stroke="#34D399" stroke-opacity="0.55" stroke-width="1.6" class="flow-slow"/>
+      <line x1="205" y1="118" x2="326" y2="182" stroke="#F59E0B" stroke-opacity="0.55" stroke-width="1.6" class="flow"/>
+      <line x1="96" y1="56" x2="322" y2="52" stroke="#64748B" stroke-opacity="0.28" stroke-width="1"/>
+      <line x1="108" y1="188" x2="326" y2="182" stroke="#64748B" stroke-opacity="0.28" stroke-width="1"/>
+      <line x1="96" y1="56" x2="108" y2="188" stroke="#64748B" stroke-opacity="0.24" stroke-width="1"/>
+      <line x1="322" y1="52" x2="326" y2="182" stroke="#64748B" stroke-opacity="0.24" stroke-width="1"/>
+
+      <!-- Center Hub: Orchestrator -->
+      <g filter="url(#nodeGlow)">
+        <circle cx="205" cy="118" r="24" fill="#131C3A" stroke="url(#accentBar)" stroke-width="2.2"/>
+        <circle cx="205" cy="118" r="8" fill="#38BDF8"/>
+      </g>
+      <text x="205" y="156" text-anchor="middle" class="node-label" fill="#E2E8F0">ORCHESTRATOR</text>
+
+      <!-- Node 1: SWE Bench -->
+      <g class="float1">
+        <rect x="42" y="38" width="96" height="30" rx="15" fill="#111933" stroke="#38BDF8" stroke-opacity="0.65" stroke-width="1.3"/>
+        <circle cx="59" cy="53" r="4" fill="#38BDF8"/>
+        <text x="69" y="57" class="node-label" fill="#BAE6FD">SWE EVAL</text>
+      </g>
+
+      <!-- Node 2: Agents -->
+      <g class="float2">
+        <rect x="276" y="34" width="110" height="30" rx="15" fill="#111933" stroke="#A78BFA" stroke-opacity="0.65" stroke-width="1.3"/>
+        <circle cx="293" cy="49" r="4" fill="#A78BFA"/>
+        <text x="303" y="53" class="node-label" fill="#DDD6FE">MULTI-AGENT</text>
+      </g>
+
+      <!-- Node 3: ML Pipelines -->
+      <g class="float2">
+        <rect x="44" y="174" width="114" height="30" rx="15" fill="#111933" stroke="#34D399" stroke-opacity="0.65" stroke-width="1.3"/>
+        <circle cx="61" cy="189" r="4" fill="#34D399"/>
+        <text x="71" y="193" class="node-label" fill="#A7F3D0">ML PIPELINES</text>
+      </g>
+
+      <!-- Node 4: Systems / Rust -->
+      <g class="float1">
+        <rect x="274" y="170" width="112" height="30" rx="15" fill="#111933" stroke="#F59E0B" stroke-opacity="0.65" stroke-width="1.3"/>
+        <circle cx="291" cy="185" r="4" fill="#F59E0B"/>
+        <text x="301" y="189" class="node-label" fill="#FDE68A">SYSTEMS TUI</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Outer Crisp Border -->
+  <rect x="1" y="1" width="1198" height="278" rx="18" stroke="url(#borderGrad)" stroke-width="1.5"/>
+</svg>

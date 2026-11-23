@@ -1,0 +1,72 @@
+<svg width="1200" height="110" viewBox="0 0 1200 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="footerBg" x1="0" y1="0" x2="1200" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0B0F19"/>
+      <stop offset="50%" stop-color="#141B35"/>
+      <stop offset="100%" stop-color="#1A1336"/>
+    </linearGradient>
+    <linearGradient id="waveGrad1" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.28"/>
+      <stop offset="50%" stop-color="#A78BFA" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#34D399" stop-opacity="0.28"/>
+    </linearGradient>
+    <linearGradient id="waveGrad2" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#38BDF8" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#A78BFA" stop-opacity="0.18"/>
+    </linearGradient>
+    <linearGradient id="footerBorder" x1="0" y1="0" x2="1200" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#A78BFA" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#34D399" stop-opacity="0.35"/>
+    </linearGradient>
+    <clipPath id="footerClip">
+      <rect x="1" y="1" width="1198" height="108" rx="16"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .footer-title {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      fill: #E2E8F0;
+      letter-spacing: 0.3px;
+    }
+    .footer-sub {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 500;
+      fill: #CBD5E1;
+      letter-spacing: 0.5px;
+    }
+    @keyframes drift1 {
+      0%, 100% { transform: translateX(0px); }
+      50% { transform: translateX(-28px); }
+    }
+    @keyframes drift2 {
+      0%, 100% { transform: translateX(0px); }
+      50% { transform: translateX(28px); }
+    }
+    .w1 { animation: drift1 7s ease-in-out infinite; }
+    .w2 { animation: drift2 9s ease-in-out infinite; }
+  </style>
+
+  <g clip-path="url(#footerClip)">
+    <rect x="0" y="0" width="1200" height="110" fill="url(#footerBg)"/>
+
+    <!-- Animated Soft Waves -->
+    <g class="w1">
+      <path d="M-60 82 Q 180 56 420 82 T 900 78 T 1280 74 L 1280 120 L -60 120 Z" fill="url(#waveGrad1)"/>
+    </g>
+    <g class="w2">
+      <path d="M-60 92 Q 220 68 460 92 T 940 88 T 1280 88 L 1280 120 L -60 120 Z" fill="url(#waveGrad2)"/>
+    </g>
+
+    <!-- Closing Message -->
+    <text x="600" y="38" text-anchor="middle" class="footer-title">Thanks for stopping by — let's build reliable, intelligent systems.</text>
+    <text x="600" y="61" text-anchor="middle" class="footer-sub">raminsharifi.ca  ·  linkedin.com/in/raminsharifi  ·  raminsharifi@proton.me</text>
+  </g>
+
+  <rect x="1" y="1" width="1198" height="108" rx="16" stroke="url(#footerBorder)" stroke-width="1.2"/>
+</svg>
